@@ -10,11 +10,15 @@ use warnings;
 
 use Log::ger::Util;
 
-sub get_hooks {
-    my %conf = @_;
+sub meta { +{
+    v => 1,
+} }
 
-    my $sub_name    = $conf{sub_name}    || "log";
-    my $method_name = $conf{method_name} || "log";
+sub get_hooks {
+    my %plugin_conf = @_;
+
+    my $sub_name    = $plugin_conf{sub_name}    || "log";
+    my $method_name = $plugin_conf{method_name} || "log";
 
     return {
         create_filter => [
@@ -62,7 +66,7 @@ sub get_hooks {
                 return [{
                     log_subs    => [[$sub_name   , undef, 'ml_hashargs', undef, 'ml_hashargs']],
                     log_methods => [[$method_name, undef, 'ml_hashargs', undef, 'ml_hashargs']],
-                }, $conf{exclusive}];
+                }, $plugin_conf{exclusive}];
             },
         ],
 
@@ -86,6 +90,10 @@ sub get_hooks {
 
  log(level => 'info', message => 'an info message ...'); # won't be output to screen
  log(level => 'warn', message => 'a warning!');          # will be output
+
+To set category:
+
+ log(category=>..., level=>..., message=>...);
 
 
 =head1 DESCRIPTION
