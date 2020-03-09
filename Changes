@@ -1,28 +1,3 @@
-0.005   2017-08-01  Released-By: PERLANCAR
-
-	- No functional changes.
-
-	- [doc] Update example in Synopsis (since Log::ger 0.018, Format
-	  applies formatting locally instead of globally).
-
-
-0.004   2017-06-30  Released-By: PERLANCAR
-
-	- Adjust to Log::ger 0.011.
-
-
-0.003   2017-06-25  Released-By: PERLANCAR
-
-	- No functional changes.
-
-	- [doc] Fix example in Synopsis.
-
-
-0.002   2017-06-23  Released-By: PERLANCAR
-
-	- Adjust to Log::ger 0.005.
-
-
-0.001    2017-06-21  Released-By: PERLANCAR
+0.001    2020-03-09  Released-By: PERLANCAR
 
          - First release.
