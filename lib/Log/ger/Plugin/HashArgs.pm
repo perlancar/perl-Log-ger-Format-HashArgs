@@ -28,7 +28,10 @@ sub get_hooks {
                     # die "$logger_name(): Please specify 'level'" unless exists $log_args{level};
                     my $level = Log::ger::Util::numeric_level($log_args{level});
                     return 0 unless $level <= $Log::ger::Current_Level;
-                    {level=>$level};
+                    my $per_msg_conf = {level=>$level};
+                    $per_msg_conf->{category} = $log_args{category}
+                        if defined $log_args{category};
+                    $per_msg_conf;
                 };
 
                 [$filter, 0, 'ml_hashargs'];
