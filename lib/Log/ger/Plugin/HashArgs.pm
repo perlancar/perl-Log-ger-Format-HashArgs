@@ -1,4 +1,4 @@
-package Log::ger::Plugin::HashArgs;
+package Log::ger::Format::HashArgs;
 
 # AUTHORITY
 # DATE
@@ -80,7 +80,9 @@ sub get_hooks {
 
 =head1 SYNOPSIS
 
- use Log::ger::Plugin 'HashArgs', (
+To use for the current package:
+
+ use Log::ger::Format 'HashArgs', (
      # sub_name    => 'log_it', # the default name is 'log'
      # method_name => 'log_it', # the default name is 'log'
      # exclusive => 1,          # optional, defaults to 0
@@ -98,8 +100,8 @@ To set category:
 
 =head1 DESCRIPTION
 
-This is a plugin to log using a single log subroutine that is passed the message
-as well as the level, using hash arguments.
+This is a format plugin to log using a single log subroutine that is passed the
+message as well as the level, using hash arguments.
 
 Note: the multilevel log is slightly slower because of the extra argument and
 additional string level -> numeric level conversion. See benchmarks in
@@ -130,4 +132,6 @@ subroutines or C<LEVEL> methods (e.g. C<log_warn>, C<trace>, ...).
 L<Log::ger::Like::LogDispatch> which uses this plugin. The interface provided by
 this HashArgs plugin is similar to L<Log::Dispatch> interface.
 
-L<Log::ger::Plugin::MultilevelLog>
+L<Log::ger::Format::MultilevelLog>
+
+L<Log::ger::Plugin::Hashref>
