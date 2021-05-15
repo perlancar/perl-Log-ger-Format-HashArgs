@@ -90,12 +90,12 @@ To use for the current package:
  use Log::ger::Output 'Screen';
  use Log::ger;
 
- log(level => 'info', message => 'an info message ...'); # won't be output to screen
- log(level => 'warn', message => 'a warning!');          # will be output
+ log_it(level => 'info', message => 'an info message ...'); # won't be output to screen
+ log_it(level => 'warn', message => 'a warning!');          # will be output
 
 To set category:
 
- log(category=>..., level=>..., message=>...);
+ log_it(category=>..., level=>..., message=>...);
 
 
 =head1 DESCRIPTION
